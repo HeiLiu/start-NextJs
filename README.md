@@ -41,9 +41,39 @@ const handleRouterChange = url => {
 Router.events.on('routerChangeStart', handleRouterChange);
 // 可以使用.off() 取消监听
 ```
+### 预加载
+<Link>添加 prefetch 属性，Next.js 将会在后台预加载这些页面。  
 
+```js
+import Link from 'next/link'
 
+// example header component
+export default () =>
+  <nav>
+    <ul>
+      <li>
+        <Link prefetch href="/">
+          <a>Home</a>
+        </Link>
+      </li>
+      <li>
+        <Link prefetch href="/about">
+          <a>About</a>
+        </Link>
+      </li>
+      <li>
+        <Link prefetch href="/contact">
+          <a>Contact</a>
+        </Link>
+      </li>
+    </ul>
+  </nav>
+```
+好像有点明白是怎么回事了 再来
 
+这个分支上改一点，再把那个已被修改的拿过来
+
+这个分支上改一点，再把那个已被修改的拿过来
 
 [参考链接]（https://juejin.im/post/5ce77761e51d45775964867d）  
 [又一个参考链接](https://juejin.im/post/5b83e1776fb9a01a2022879b)
